@@ -1,4 +1,7 @@
 import json
+
+import jmespath
+
 # parse
 jsonstring = '{"name": "erik", "age": 38, "married": true}'
 data = json.loads(jsonstring)
@@ -18,3 +21,8 @@ data={}
 with open('sources/map.json') as json_file:
   data = json.load(json_file)
   print(data)
+# json查询
+j = { "people": [{ "name": "erik", "age": 38 },{ "name": "rob", "age": 14 }] }
+print( jmespath.search('people[0].age', j))
+print(jmespath.search("people[*].age", j))
+print(jmespath.search("people[?name=='erik'].age", j))
