@@ -18,3 +18,4 @@ import subprocess
 #Pipenv
 #pip install --user pipenv or brew install pipenv
 #pipenv shell #进入虚拟环境
+#pipenv check #检查
