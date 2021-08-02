@@ -1,5 +1,7 @@
 # class
 # 原生类
+
+
 print(type('a'))
 print(type(1))
 print(type(True))
@@ -32,10 +34,32 @@ class Car:
 
 
 # 创建Car类实例
-car = Car(False,2)
+car = Car(False, 2)
 print(id(car))
 car.increase_speed(10)
 car.start()
 car.increase_speed(40)
 car2 = Car()
 print(id(car2))
+
+# inherits,继承
+
+
+class InheritsCar(Car):
+    trunkOpen = False
+    # 覆盖重写构造方法
+
+    def __init__(self, started, speed) -> None:
+        self.trunkOpen = True
+        super().__init__(started=started, speed=speed)
+
+    def changeOpen(self):
+        if self.trunkOpen:
+            self.trunkOpen = False
+        else:
+            self.trunkOpen = True
+        print(self.trunkOpen)
+
+
+inheritsCar = InheritsCar()
+inheritsCar.changeOpen()
