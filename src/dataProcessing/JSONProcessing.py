@@ -13,12 +13,12 @@ print('string',json.dumps(encodingData,indent=2))# indent 控制缩进
 # echo "{ \"name\": \"Monty\", \"age\": 45 }" python3 -m json.tool
 # 写入json
 writeData = {'name': 'zou', 'age': 18 }
-with open('sources/writeData.json','w') as json_file:
+with open('./sources/writeData.json','w') as json_file:
   json.dump(writeData,json_file,indent=2)
   print(writeData)
 # 读取json
 data={}
-with open('sources/map.json') as json_file:
+with open('./sources/map.json') as json_file:
   data = json.load(json_file)
   print(data)
 # json查询
